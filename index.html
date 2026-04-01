@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gyros & Olut Laskuri</title>
+</head>
+<body>
+
+<h1>🍺🌯 Laskuri</h1>
+
+<h2>Oluet: <span id="beer">0</span></h2>
+<button onclick="addBeer()">+1 olut</button>
+
+<h2>Gyrokset: <span id="gyro">0</span></h2>
+<button onclick="addGyro()">+1 gyros</button>
+
+<br><br>
+<button onclick="reset()">Reset</button>
+
+<script>
+let beer = localStorage.getItem("beer") || 0;
+let gyro = localStorage.getItem("gyro") || 0;
+
+document.getElementById("beer").innerText = beer;
+document.getElementById("gyro").innerText = gyro;
+
+function addBeer() {
+  beer++;
+  localStorage.setItem("beer", beer);
+  document.getElementById("beer").innerText = beer;
+}
+
+function addGyro() {
+  gyro++;
+  localStorage.setItem("gyro", gyro);
+  document.getElementById("gyro").innerText = gyro;
+}
+
+function reset() {
+  beer = 0;
+  gyro = 0;
+  localStorage.setItem("beer", 0);
+  localStorage.setItem("gyro", 0);
+  document.getElementById("beer").innerText = 0;
+  document.getElementById("gyro").innerText = 0;
+}
+</script>
+
+</body>
+</html>
